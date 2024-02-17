@@ -18,9 +18,9 @@ VERSION = \
         $(NEW_VERSION), \
         $(NEW_VERSION)-$(call short_sha))
 
-BINARY_NAME=saas
-ORG=chaordic-io
-REPO=saas
+BINARY_NAME=secrets
+ORG=OpenPaasDev
+REPO=secrets
 DATE_TIME := $(shell date '+%Y-%m-%d %H:%M:%S')
 lint:
 	golangci-lint run ./...
