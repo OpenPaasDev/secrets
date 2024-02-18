@@ -344,7 +344,6 @@ func identityStr(key *crypto.Key) string {
 	identity := ""
 	for k := range key.GetEntity().Identities {
 		identity = strings.ToLower(strings.ReplaceAll(strings.ReplaceAll(strings.ReplaceAll(k, "<", ""), ">", ""), " ", "-"))
-
 	}
 	return identity + ".asc"
 }
@@ -404,7 +403,6 @@ func initSettings() (*keySettings, error) {
 			},
 		},
 	}
-
 	answers := keySettings{}
 
 	fmt.Println("Initializing the secrets-system, please provide the following details for your private key")

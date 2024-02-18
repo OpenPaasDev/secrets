@@ -80,7 +80,7 @@ func initSecretsCommand() []*cobra.Command {
 
 				envrc := ""
 				for _, secret := range secrets {
-					envrc += fmt.Sprintf("export %s=%s\n", secret.Name, secret.Value)
+					envrc += fmt.Sprintf("export %s=\"%s\"\n", secret.Name, secret.Value)
 				}
 				err = os.WriteFile(outputFile, []byte(envrc), 0644) // nolint
 				if err != nil {
