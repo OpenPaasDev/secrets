@@ -59,6 +59,7 @@ func Test_Encrypt_Decrypt_To_Multiple_Keys(t *testing.T) {
 	err := os.Setenv("OPENPAAS_PASSPHRASE", "LongSecret")
 	require.NoError(t, err)
 	envName := RandStringBytes()
+	defer os.RemoveAll(filepath.Join("testdata", envName)) // nolint
 	err = os.MkdirAll(filepath.Join("testdata", envName, "secrets"), 0750)
 	require.NoError(t, err)
 	err = writePubKey("testdata", envName, johnDoeKey)
@@ -97,6 +98,7 @@ func Test_Refresh_Add_One_Key_Remove_Another(t *testing.T) {
 	err := os.Setenv("OPENPAAS_PASSPHRASE", "LongSecret")
 	require.NoError(t, err)
 	envName := RandStringBytes()
+	defer os.RemoveAll(filepath.Join("testdata", envName)) // nolint
 	err = os.MkdirAll(filepath.Join("testdata", envName, "secrets"), 0750)
 	require.NoError(t, err)
 	err = writePubKey("testdata", envName, johnDoeKey)
@@ -146,6 +148,7 @@ func Test_Encrypt_No_Keys(t *testing.T) {
 	err := os.Setenv("OPENPAAS_PASSPHRASE", "LongSecret")
 	require.NoError(t, err)
 	envName := RandStringBytes()
+	defer os.RemoveAll(filepath.Join("testdata", envName)) // nolint
 	err = os.MkdirAll(filepath.Join("testdata", envName, "secrets"), 0750)
 	require.NoError(t, err)
 
@@ -167,6 +170,7 @@ func Test_Init_Env(t *testing.T) {
 
 func Test_Init_Secrets_With_No_Key_File(t *testing.T) {
 	envName := RandStringBytes()
+	defer os.RemoveAll(filepath.Join("testdata", envName)) // nolint
 
 	err := os.RemoveAll(filepath.Join("testdata", ".openpaas"))
 	require.NoError(t, err)
@@ -195,6 +199,7 @@ func Test_Init_Secrets_With_No_Key_File(t *testing.T) {
 func Test_Init_Secrets_With_Key_Set_In_Env(t *testing.T) {
 	envName := RandStringBytes()
 
+	defer os.RemoveAll(filepath.Join("testdata", envName)) // nolint
 	err := os.Setenv("OPENPAAS_PRIVATE_KEY", johnArmored)
 	require.NoError(t, err)
 
