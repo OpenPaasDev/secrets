@@ -1,7 +1,7 @@
 # GPG based secrets management for Git projects
 OpenPaaS `secrets` allows you to manage secrets in your Git repository, encrypted by GPG.
 
-You can install it by running `go install https://github.com/OpenPaasDev/secrets@latest` if you have Go installed and setup, then just run `secrets`.
+You can install it by running `go install github.com/OpenPaasDev/secrets@latest` if you have Go installed and setup, then just run `secrets`.
 
 ## Initialising a secrets system
 To initialise an environment, and your private key, should you not have one, run:
