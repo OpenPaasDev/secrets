@@ -3,6 +3,8 @@ OpenPaaS `secrets` allows you to manage secrets in your Git repository, encrypte
 
 You can install it by running `go install github.com/OpenPaasDev/secrets@latest` if you have Go installed and setup, then just run `secrets`.
 
+The above install requires you to have Go installed, `GOPATH` setup, and your `$GOPATH/bin` on your `PATH`.
+
 ## Usage 
 
 ### Initialising a secrets system
