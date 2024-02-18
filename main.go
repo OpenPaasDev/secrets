@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/openpaasDev/secrets/pkg/secrets"
+	"github.com/OpenPaasDev/secrets/pkg/secrets"
 	"github.com/spf13/cobra"
 )
 

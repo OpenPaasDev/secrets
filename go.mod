@@ -1,4 +1,4 @@
-module github.com/openpaasDev/secrets
+module github.com/OpenPaasDev/secrets
 
 go 1.21.6
 
